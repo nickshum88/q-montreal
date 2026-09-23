@@ -190,6 +190,30 @@
   .pin.active circle.halo { opacity: 1; }
   .pin circle.halo { fill: none; stroke: var(--amber); stroke-width: 3; opacity: 0; transition: opacity 160ms ease; }
 
+  /* Flights */
+  .flights { padding-block: 40px 0; }
+  .flights-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 16px; }
+  .flights-head h2 { font-family: "Bricolage Grotesque", "Figtree", sans-serif; font-weight: 800; font-size: clamp(26px, 3.4vw, 34px); margin: 0; letter-spacing: -0.01em; }
+  .flights-head p { margin: 0; color: var(--ink-2); font-size: 14px; }
+  .flight-table { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; }
+  .flight-row { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 12px 20px; padding: 14px 18px; border-top: 1px solid var(--line); align-items: start; }
+  .flight-row:first-child { border-top: 0; }
+  .flight-row.head { padding-block: 10px; background: var(--bg-2); font: 700 11px/1 "Figtree", sans-serif; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-2); }
+  .flight-row .who { font-family: "Bricolage Grotesque", "Figtree", sans-serif; font-weight: 700; font-size: 17px; }
+  .flight-row .who small { display: block; font: 500 13px/1.3 "Figtree", sans-serif; color: var(--ink-2); margin-top: 3px; }
+  .flight-row .leg { font-size: 15px; font-variant-numeric: tabular-nums; }
+  .flight-row .leg b { font-weight: 700; }
+  .flight-row .leg .day { display: block; font-size: 12px; color: var(--ink-2); font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 2px; }
+  .flight-row .leg a { color: var(--river); font-weight: 600; text-decoration: none; font-size: 13px; white-space: nowrap; }
+  .flight-row .leg a:hover { text-decoration: underline; }
+  .flight-row .leg .tbd { color: var(--ink-2); font-style: italic; }
+  @media (max-width: 620px) {
+    .flight-row { grid-template-columns: 1fr 1fr; }
+    .flight-row .who { grid-column: 1 / -1; }
+    .flight-row.head .who { display: none; }
+    .flight-row.head { grid-template-columns: 1fr 1fr; }
+  }
+
   /* Schedule */
   .schedule { padding-block: 48px 24px; }
   .schedule-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
@@ -284,6 +308,7 @@
       <span class="dates">Oct 1–5, 2026 · Q’s bachelor party</span>
     </div>
     <nav aria-label="Jump to day">
+      <a class="chip" href="#flights">Flights</a>
       <a class="chip" href="#thu">Thu 1</a>
       <a class="chip" href="#fri">Fri 2</a>
       <a class="chip" href="#sat">Sat 3</a>
@@ -456,6 +481,36 @@
   </div>
 </section>
 
+<section class="flights wrap" id="flights">
+  <div class="flights-head">
+    <h2>Flights</h2>
+    <p>Air Canada throughout. Tap a flight number for live status.</p>
+  </div>
+  <div class="flight-table">
+    <div class="flight-row head"><span class="who">Who</span><span>Out · Thu Oct 1</span><span>Back</span></div>
+    <div class="flight-row">
+      <span class="who">Nick, Mike, Fernando</span>
+      <span class="leg"><span class="day">Thu Oct 1</span><b>8:15 AM</b> · <a href="https://flightaware.com/live/flight/ACA774" target="_blank" rel="noopener">AC 774 ↗</a></span>
+      <span class="leg"><span class="day">Mon Oct 5</span><b>1:55 PM</b> · <a href="https://flightaware.com/live/flight/ACA777" target="_blank" rel="noopener">AC 777 ↗</a></span>
+    </div>
+    <div class="flight-row">
+      <span class="who">Daniel</span>
+      <span class="leg"><span class="day">Thu Oct 1</span><b>11:05 AM</b> · <a href="https://flightaware.com/live/flight/ACA522" target="_blank" rel="noopener">AC 522 ↗</a></span>
+      <span class="leg"><span class="day">Sun Oct 4</span><b>8:35</b> · <a href="https://flightaware.com/live/flight/ACA521" target="_blank" rel="noopener">AC 521 ↗</a></span>
+    </div>
+    <div class="flight-row">
+      <span class="who">Q <small>the groom</small></span>
+      <span class="leg"><span class="day">Thu Oct 1</span><b>11:30 AM</b> · <a href="https://flightaware.com/live/flight/ACA1205" target="_blank" rel="noopener">AC 1205 ↗</a></span>
+      <span class="leg"><span class="day">Sun Oct 4</span><span class="tbd">Flight TBD</span></span>
+    </div>
+    <div class="flight-row">
+      <span class="who">Chris</span>
+      <span class="leg"><span class="tbd">TBD</span></span>
+      <span class="leg"><span class="tbd">TBD</span></span>
+    </div>
+  </div>
+</section>
+
 <section class="schedule wrap" id="schedule">
   <div class="schedule-head">
     <h2>The weekend</h2>
@@ -476,7 +531,7 @@
       <article class="stop" id="s-hotel" data-stop="hotel">
         <p class="time">Whenever you land</p>
         <h4 class="name"><span class="dot hotel">H</span>Maison Place Jacques-Cartier</h4>
-        <p class="what">Check in, drop bags · home base all weekend</p>
+        <p class="what">Check in, drop bags · first wave lands late morning, Daniel and Q early afternoon</p>
         <details>
           <summary>Details</summary>
           <div class="detail">
@@ -644,7 +699,7 @@
       <div class="open-slot">
         <p class="time">Daytime</p>
         <p class="name">Slow morning</p>
-        <p class="what">Hangover poutine, a nap, and a walk up the mountain for anyone still standing.</p>
+        <p class="what">Hangover poutine, a nap, and a walk up the mountain for anyone still standing. Daniel and Q fly out today, so say goodbyes early.</p>
       </div>
       <article class="stop" id="s-barroco" data-stop="barroco">
         <p class="time">Evening · time TBD</p>
@@ -668,7 +723,7 @@
       <div class="open-slot" id="mon" style="scroll-margin-top:80px">
         <p class="time">Monday, Oct 5</p>
         <p class="name">Departure</p>
-        <p class="what">Flights home. Nobody talks about Friday.</p>
+        <p class="what">Nick, Mike and Fernando on the 1:55 PM. Nobody talks about Friday.</p>
       </div>
     </div>
   </div>
@@ -691,7 +746,7 @@
 </section>
 
 <footer class="wrap">
-  <p>Dinner times are booked; “after dinner” stops follow whenever the table clears. Still to be confirmed: the pickleball court, Saturday brunch at Marcus, the Saturday spa, and Sunday dinner time. Map is a sketch, not to scale.</p>
+  <p>Dinner times are booked; “after dinner” stops follow whenever the table clears. Still to be confirmed: the pickleball court, Saturday brunch at Marcus, the Saturday spa, Sunday dinner time, Q’s return flight and Chris’s flights. Map is a sketch, not to scale.</p>
 </footer>
 
 <script>
