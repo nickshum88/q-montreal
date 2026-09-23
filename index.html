@@ -1,0 +1,736 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Q’s bachelor party in Montréal, Oct 1–5, 2026: map, schedule and every stop.">
+<meta property="og:title" content="Q Does Montréal">
+<meta property="og:description" content="Bachelor weekend itinerary, Oct 1–5, 2026">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥂</text></svg>">
+<title>Q Does Montréal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --bg: #eef1f6;
+    --bg-2: #e3e8f0;
+    --surface: #ffffff;
+    --line: #cfd6e2;
+    --line-strong: #a9b3c4;
+    --ink: #121a2c;
+    --ink-2: #4d576c;
+    --amber: #b8730d;
+    --amber-ink: #6a4106;
+    --amber-soft: #fbedd0;
+    --river: #2f6cc4;
+    --river-soft: #d6e4f8;
+    --pin: #d7383b;
+    --pin-ink: #ffffff;
+    --open-border: #a9b3c4;
+    --map-ground: #dfe5ee;
+    --map-street: #ffffff;
+    --map-grid: #cdd5e2;
+    --map-park: #cfe3cf;
+    --map-water: #b9d0f0;
+    --map-label: #4d576c;
+    --focus: #2f6cc4;
+    --shadow: 0 14px 40px rgba(18, 26, 44, 0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0e1424;
+      --bg-2: #141c31;
+      --surface: #182140;
+      --line: #2a3556;
+      --line-strong: #3d4a70;
+      --ink: #f3efe6;
+      --ink-2: #a3acc2;
+      --amber: #f2b544;
+      --amber-ink: #f8d287;
+      --amber-soft: #2c2a2a;
+      --river: #6ea3ee;
+      --river-soft: #1c2b4a;
+      --pin: #ee4f52;
+      --pin-ink: #ffffff;
+      --open-border: #3d4a70;
+      --map-ground: #111a30;
+      --map-street: #253057;
+      --map-grid: #1a2440;
+      --map-park: #1c3128;
+      --map-water: #1a3565;
+      --map-label: #a3acc2;
+      --focus: #f2b544;
+      --shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0e1424;
+    --bg-2: #141c31;
+    --surface: #182140;
+    --line: #2a3556;
+    --line-strong: #3d4a70;
+    --ink: #f3efe6;
+    --ink-2: #a3acc2;
+    --amber: #f2b544;
+    --amber-ink: #f8d287;
+    --amber-soft: #2c2a2a;
+    --river: #6ea3ee;
+    --river-soft: #1c2b4a;
+    --pin: #ee4f52;
+    --pin-ink: #ffffff;
+    --open-border: #3d4a70;
+    --map-ground: #111a30;
+    --map-street: #253057;
+    --map-grid: #1a2440;
+    --map-park: #1c3128;
+    --map-water: #1a3565;
+    --map-label: #a3acc2;
+    --focus: #f2b544;
+    --shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Figtree", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible, summary:focus-visible, .pin:focus-visible {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  .wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; }
+
+  /* Top bar */
+  .topbar {
+    position: sticky; top: 0; z-index: 5;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .topbar .wrap {
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    padding-block: 12px;
+  }
+  .brand {
+    display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap;
+    font-family: "Bricolage Grotesque", "Figtree", sans-serif;
+  }
+  .brand .city { font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; font-size: 15px; }
+  .brand .dates { font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-2); font-weight: 600; }
+  .topbar nav { display: flex; gap: 6px; }
+  .chip {
+    font: 600 13px/1 "Figtree", sans-serif;
+    padding: 9px 12px; border-radius: 999px;
+    border: 1px solid var(--line-strong); background: transparent; color: var(--ink);
+    text-decoration: none; cursor: pointer; white-space: nowrap;
+  }
+  .chip:hover { background: var(--bg-2); }
+  @media (max-width: 720px) { .topbar nav { display: none; } }
+
+  /* Hero */
+  .hero { padding-block: 40px 24px; }
+  .hero .eyebrow {
+    font: 600 13px/1 "Figtree", sans-serif; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--amber); margin: 0 0 12px;
+  }
+  .hero h1 {
+    font-family: "Bricolage Grotesque", "Figtree", sans-serif;
+    font-weight: 800; font-size: clamp(44px, 8vw, 96px); line-height: 0.95;
+    letter-spacing: -0.02em; margin: 0; text-wrap: balance;
+    font-variation-settings: "opsz" 96;
+  }
+  .hero h1 .accent { color: var(--amber); }
+  .hero p.lede {
+    margin: 18px 0 0; max-width: 58ch; font-size: 18px; color: var(--ink-2);
+  }
+  .hero .meta {
+    display: flex; flex-wrap: wrap; gap: 10px 22px; margin-top: 22px;
+    font-size: 14px; color: var(--ink-2);
+  }
+  .hero .meta b { color: var(--ink); font-weight: 600; }
+
+  /* Map */
+  .map-card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+    box-shadow: var(--shadow); overflow: hidden;
+  }
+  .map-card svg { display: block; width: 100%; height: auto; background: var(--map-ground); }
+  .map-note {
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+    padding: 12px 18px; font-size: 13px; color: var(--ink-2); border-top: 1px solid var(--line);
+  }
+  .map-note .legend { display: flex; flex-wrap: wrap; gap: 8px 16px; }
+  .map-note .legend a { text-decoration: none; display: inline-flex; align-items: center; gap: 6px; color: var(--ink); }
+  .map-note .legend a:hover { text-decoration: underline; }
+  .dot {
+    display: inline-grid; place-items: center; width: 20px; height: 20px; border-radius: 50%;
+    background: var(--pin); color: var(--pin-ink);
+    font: 700 11px/1 "Figtree", sans-serif; font-variant-numeric: tabular-nums;
+  }
+  .map-labels text { font-family: "Bricolage Grotesque", "Figtree", sans-serif; fill: var(--map-label); }
+  .map-labels .hood { font-weight: 800; font-size: 20px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .map-labels .street { font-family: "Figtree", sans-serif; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.85; }
+  .map-labels .water { font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; font-size: 18px; font-style: italic; fill: var(--river); letter-spacing: 0.04em; }
+  .map-labels .title { font-weight: 800; font-size: 46px; fill: var(--ink); letter-spacing: -0.01em; }
+  .map-labels .subtitle { font-family: "Figtree", sans-serif; font-weight: 600; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase; fill: var(--amber); }
+  .pin { cursor: pointer; }
+  .pin circle.body { fill: var(--pin); stroke: var(--surface); stroke-width: 3; transition: r 160ms ease; }
+  .pin text { fill: var(--pin-ink); font: 700 15px "Figtree", sans-serif; text-anchor: middle; dominant-baseline: central; pointer-events: none; }
+  .pin .name { fill: var(--ink); font: 700 13px "Figtree", sans-serif; text-anchor: start; dominant-baseline: auto; paint-order: stroke; stroke: var(--map-ground); stroke-width: 4px; stroke-linejoin: round; }
+  .pin:hover circle.body, .pin.active circle.body { r: 17; }
+  .pin.active circle.halo { opacity: 1; }
+  .pin circle.halo { fill: none; stroke: var(--amber); stroke-width: 3; opacity: 0; transition: opacity 160ms ease; }
+
+  /* Schedule */
+  .schedule { padding-block: 48px 24px; }
+  .schedule-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+  .schedule-head h2 {
+    font-family: "Bricolage Grotesque", "Figtree", sans-serif; font-weight: 800;
+    font-size: clamp(30px, 4vw, 40px); margin: 0; letter-spacing: -0.01em;
+  }
+  .schedule-head p { margin: 0; color: var(--ink-2); font-size: 14px; }
+  .mobile-nav { display: none; gap: 8px; overflow-x: auto; padding-bottom: 6px; margin-bottom: 18px; }
+  @media (max-width: 720px) { .mobile-nav { display: flex; } }
+
+  .days {
+    display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px;
+  }
+  @media (max-width: 1000px) { .days { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+  @media (max-width: 620px) { .days { grid-template-columns: 1fr; } }
+  .day { scroll-margin-top: 80px; display: flex; flex-direction: column; gap: 12px; }
+  .day header { display: flex; align-items: baseline; gap: 10px; padding-bottom: 8px; border-bottom: 2px solid var(--ink); margin-bottom: 4px; }
+  .day header h3 { font-family: "Bricolage Grotesque", "Figtree", sans-serif; font-weight: 800; font-size: 22px; margin: 0; }
+  .day header span { color: var(--ink-2); font-size: 14px; font-weight: 600; }
+  .day header .tag {
+    margin-left: auto; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--amber); font-weight: 700;
+  }
+
+  .stop {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 14px 16px; position: relative; transition: border-color 160ms ease, box-shadow 160ms ease;
+  }
+  .stop.active { border-color: var(--amber); box-shadow: 0 0 0 3px color-mix(in srgb, var(--amber) 28%, transparent); }
+  .stop .time {
+    font: 700 13px/1 "Figtree", sans-serif; font-variant-numeric: tabular-nums; letter-spacing: 0.04em;
+    color: var(--amber); text-transform: uppercase; margin: 0 0 8px;
+  }
+  .stop .name { display: flex; align-items: center; gap: 10px; margin: 0; font-family: "Bricolage Grotesque", "Figtree", sans-serif; font-weight: 700; font-size: 19px; line-height: 1.2; }
+  .stop .dot { width: 24px; height: 24px; font-size: 12px; flex: none; }
+  .stop .what { margin: 6px 0 0; color: var(--ink-2); font-size: 14px; }
+  .stop details { margin-top: 10px; }
+  .stop summary {
+    cursor: pointer; list-style: none; font-size: 13px; font-weight: 600; color: var(--ink-2);
+    display: inline-flex; align-items: center; gap: 6px; border-radius: 6px;
+  }
+  .stop summary::-webkit-details-marker { display: none; }
+  .stop summary::before { content: "+"; font-weight: 700; width: 14px; display: inline-block; color: var(--amber); }
+  .stop details[open] summary::before { content: "–"; }
+  .stop summary:hover { color: var(--ink); }
+  .stop .detail { font-size: 14px; color: var(--ink-2); margin: 8px 0 0; display: grid; gap: 6px; }
+  .stop .detail .addr { color: var(--ink); }
+  .stop .detail .links { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 2px; }
+  .stop .detail .links a { color: var(--river); font-weight: 600; text-decoration: none; }
+  .stop .detail .links a:hover { text-decoration: underline; }
+  .hero .meta a { color: var(--river); font-weight: 600; text-decoration: none; }
+  .hero .meta a:hover { text-decoration: underline; }
+  .pin.hotel rect.body { fill: var(--amber); stroke: var(--surface); stroke-width: 3; }
+  .pin.hotel text { fill: var(--ink); }
+  .pin.hotel .name { fill: var(--amber-ink); }
+  .dot.hotel { background: var(--amber); color: #121a2c; border-radius: 5px; }
+  .stop .arrow { display: flex; justify-content: center; margin: -4px 0 -4px; color: var(--ink-2); font-size: 14px; }
+
+  .open-slot {
+    border: 1.5px dashed var(--open-border); border-radius: 14px; padding: 14px 16px;
+    background: transparent;
+  }
+  .open-slot .time { font: 700 13px/1 "Figtree", sans-serif; letter-spacing: 0.04em; color: var(--ink-2); text-transform: uppercase; margin: 0 0 8px; }
+  .open-slot .name { font-family: "Bricolage Grotesque", "Figtree", sans-serif; font-weight: 700; font-size: 17px; margin: 0; }
+  .open-slot .what { margin: 6px 0 0; color: var(--ink-2); font-size: 14px; }
+
+  .flow { display: flex; justify-content: center; color: var(--ink-2); font-size: 18px; line-height: 1; margin: -4px 0; }
+
+  /* Rules */
+  .rules { padding-block: 32px 8px; }
+  .rules .box {
+    background: var(--amber-soft); border: 1px solid color-mix(in srgb, var(--amber) 40%, transparent);
+    border-radius: 16px; padding: 22px 24px;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px 36px;
+  }
+  @media (max-width: 720px) { .rules .box { grid-template-columns: 1fr; } }
+  .rules h2 { grid-column: 1 / -1; margin: 0 0 4px; font-family: "Bricolage Grotesque", "Figtree", sans-serif; font-weight: 800; font-size: 22px; color: var(--amber-ink); }
+  .rules ul { margin: 0; padding-left: 18px; display: grid; gap: 8px; font-size: 15px; }
+  .rules li b { font-weight: 700; }
+
+  footer { padding-block: 28px 48px; font-size: 13px; color: var(--ink-2); }
+  footer p { margin: 0; max-width: 80ch; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand">
+      <span class="city">Montréal</span>
+      <span class="dates">Oct 1–5, 2026 · Q’s bachelor party</span>
+    </div>
+    <nav aria-label="Jump to day">
+      <a class="chip" href="#thu">Thu 1</a>
+      <a class="chip" href="#fri">Fri 2</a>
+      <a class="chip" href="#sat">Sat 3</a>
+      <a class="chip" href="#sun">Sun 4</a>
+    </nav>
+  </div>
+</div>
+
+<section class="hero wrap">
+  <p class="eyebrow">Bachelor party · Thursday to Monday</p>
+  <h1>Q does <span class="accent">Montréal.</span></h1>
+  <p class="lede">Five days, four nights, three speakeasies, one bank vault and a pickleball court. Every stop is pinned on the map, with Google Maps and Instagram links under <b>Details</b>.</p>
+  <div class="meta">
+    <span><b>Home base:</b> <a href="https://www.google.com/maps/search/?api=1&query=Maison+Place+Jacques-Cartier+440+Place+Jacques-Cartier+Montreal" target="_blank" rel="noopener">Maison Place Jacques-Cartier ↗</a>, 440 Place Jacques-Cartier, Old Montréal</span>
+    <span><b>Dinners:</b> 8 PM sharp-ish</span>
+    <span><b>Dress:</b> smart for dinner, layers for October</span>
+    <span><b>Weather:</b> highs around 15 °C / 59 °F, bring a jacket</span>
+  </div>
+</section>
+
+<section class="wrap" id="map" aria-label="Map of the weekend">
+  <div class="map-card">
+    <svg viewBox="0 0 1200 640" role="img" aria-labelledby="mapTitle">
+      <title id="mapTitle">Sketch map of downtown Montréal, Old Montréal and Griffintown with the hotel and the weekend’s stops numbered 1 to 9</title>
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse" patternTransform="rotate(-8)">
+          <path d="M40 0H0V40" fill="none" stroke="var(--map-grid)" stroke-width="1"/>
+        </pattern>
+        <pattern id="waves" width="60" height="24" patternUnits="userSpaceOnUse">
+          <path d="M0 12 q15 -10 30 0 t30 0" fill="none" stroke="var(--river)" stroke-width="1.5" opacity="0.35"/>
+        </pattern>
+      </defs>
+
+      <!-- ground + grid -->
+      <rect width="1200" height="640" fill="var(--map-ground)"/>
+      <rect width="1200" height="640" fill="url(#grid)"/>
+
+      <!-- Mount Royal -->
+      <path d="M-20 250 C 80 120, 240 90, 380 160 C 430 185, 450 210, 470 240 L -20 240 Z" fill="var(--map-park)"/>
+      <path d="M40 232 C 120 150, 240 130, 350 175" fill="none" stroke="var(--map-grid)" stroke-width="2" stroke-dasharray="6 8"/>
+      <!-- the cross on the mountain -->
+      <g transform="translate(165,178)" stroke="var(--amber)" stroke-width="5" stroke-linecap="round">
+        <line x1="0" y1="-22" x2="0" y2="22"/><line x1="-12" y1="-8" x2="12" y2="-8"/>
+      </g>
+
+      <!-- St. Lawrence river -->
+      <path d="M-20 560 C 200 600, 420 585, 620 545 C 820 505, 1000 470, 1220 400 L 1220 640 L -20 640 Z" fill="var(--map-water)"/>
+      <path d="M-20 560 C 200 600, 420 585, 620 545 C 820 505, 1000 470, 1220 400 L 1220 640 L -20 640 Z" fill="url(#waves)"/>
+      <!-- Lachine canal -->
+      <path d="M-20 470 C 120 480, 220 500, 340 545" fill="none" stroke="var(--map-water)" stroke-width="16" stroke-linecap="round"/>
+      <!-- Old Port pier + clock tower -->
+      <path d="M740 520 L 1000 470 L 1006 484 L 746 534 Z" fill="var(--map-street)"/>
+      <g transform="translate(985,462)">
+        <rect x="-6" y="-34" width="12" height="34" fill="var(--map-street)" stroke="var(--line-strong)" stroke-width="1.5"/>
+        <circle cx="0" cy="-26" r="3.5" fill="var(--amber)"/>
+      </g>
+
+      <!-- streets -->
+      <g stroke="var(--map-street)" stroke-linecap="round" fill="none">
+        <path d="M120 175 L 1130 300" stroke-width="9"/>              <!-- Sainte-Catherine -->
+        <path d="M60 300 L 640 375 L 1150 400" stroke-width="7"/>       <!-- René-Lévesque / Saint-Jacques-ish -->
+        <path d="M330 350 L 700 405 L 1080 420" stroke-width="7"/>      <!-- Saint-Jacques / Notre-Dame -->
+        <path d="M330 430 L 700 470 L 1040 470" stroke-width="7"/>      <!-- Saint-Paul -->
+        <path d="M860 20 L 720 470" stroke-width="10"/>                 <!-- Saint-Laurent -->
+        <path d="M300 60 L 290 545" stroke-width="7"/>                  <!-- Peel -->
+        <path d="M420 140 L 400 470" stroke-width="5"/>                 <!-- de la Montagne-ish -->
+        <path d="M600 130 L 530 460" stroke-width="5"/>                 <!-- University / Saint-Pierre-ish -->
+        <path d="M1000 60 L 890 480" stroke-width="5"/>                 <!-- Saint-Denis -->
+      </g>
+
+      <!-- labels -->
+      <g class="map-labels">
+        <text class="title" x="40" y="70">MONTRÉAL</text>
+        <text class="subtitle" x="42" y="96">Bachelor weekend · Oct 1–5, 2026</text>
+
+        <text class="hood" x="470" y="130">Downtown</text>
+        <text class="hood" x="905" y="150">Plateau</text>
+        <text class="hood" x="620" y="500">Old Montréal</text>
+        <text class="hood" x="90" y="430">Griffintown</text>
+        <text class="water" x="1165" y="600" text-anchor="end">Fleuve Saint-Laurent</text>
+        <text class="water" x="40" y="500" font-size="13">Lachine Canal</text>
+        <text class="street" x="60" y="222">Mont Royal</text>
+
+        <text class="street" x="930" y="270" transform="rotate(7 930 270)">Sainte-Catherine</text>
+        <text class="street" x="940" y="462" transform="rotate(1 940 462)">Rue Saint-Paul</text>
+        <text class="street" x="1000" y="412" transform="rotate(2 1000 412)">Notre-Dame</text>
+        <text class="street" x="862" y="60" transform="rotate(-73 862 60)" text-anchor="end">Boul. Saint-Laurent</text>
+        <text class="street" x="308" y="120" transform="rotate(88 308 120)">Rue Peel</text>
+        <text class="street" x="880" y="524">Old Port</text>
+      </g>
+
+      <!-- pins -->
+      <g id="pins">
+        <g class="pin hotel" data-stop="hotel" tabindex="0" role="button" aria-label="Hotel, Maison Place Jacques-Cartier">
+          <rect class="body" x="856" y="360" width="30" height="30" rx="7"/>
+          <text x="871" y="375">H</text>
+          <text class="name" x="893" y="372">Hotel · Place Jacques-Cartier</text>
+        </g>
+        <g class="pin" data-stop="marcus" tabindex="0" role="button" aria-label="9, Marcus">
+          <circle class="halo" cx="428" cy="168" r="24"/>
+          <circle class="body" cx="428" cy="168" r="15"/>
+          <text x="428" y="168">9</text>
+          <text class="name" x="450" y="173">Marcus</text>
+        </g>
+        <g class="pin" data-stop="jatoba" tabindex="0" role="button" aria-label="1, Jatoba">
+          <circle class="halo" cx="600" cy="225" r="24"/>
+          <circle class="body" cx="600" cy="225" r="15"/>
+          <text x="600" y="225">1</text>
+          <text class="name" x="622" y="230">Jatoba</text>
+        </g>
+        <g class="pin" data-stop="stillife" tabindex="0" role="button" aria-label="2, Stillife">
+          <circle class="halo" cx="405" cy="450" r="24"/>
+          <circle class="body" cx="405" cy="450" r="15"/>
+          <text x="405" y="450">2</text>
+          <text class="name" x="380" y="480">Stillife</text>
+        </g>
+        <g class="pin" data-stop="auberge" tabindex="0" role="button" aria-label="3, Auberge Saint-Gabriel">
+          <circle class="halo" cx="790" cy="412" r="24"/>
+          <circle class="body" cx="790" cy="412" r="15"/>
+          <text x="790" y="412">3</text>
+          <text class="name" x="812" y="404">Auberge Saint-Gabriel</text>
+        </g>
+        <g class="pin" data-stop="velvet" tabindex="0" role="button" aria-label="4, Le Velvet, downstairs">
+          <circle class="halo" cx="812" cy="440" r="24"/>
+          <circle class="body" cx="812" cy="440" r="15"/>
+          <text x="812" y="440">4</text>
+          <text class="name" x="834" y="445">Le Velvet ↓</text>
+        </g>
+        <g class="pin" data-stop="voute" tabindex="0" role="button" aria-label="5, La Voûte">
+          <circle class="halo" cx="530" cy="368" r="24"/>
+          <circle class="body" cx="530" cy="368" r="15"/>
+          <text x="530" y="368">5</text>
+          <text class="name" x="552" y="362">La Voûte</text>
+        </g>
+        <g class="pin" data-stop="palma" tabindex="0" role="button" aria-label="6, Palma">
+          <circle class="halo" cx="300" cy="512" r="24"/>
+          <circle class="body" cx="300" cy="512" r="15"/>
+          <text x="300" y="512">6</text>
+          <text class="name" x="322" y="517">Palma</text>
+        </g>
+        <g class="pin" data-stop="flyjin" tabindex="0" role="button" aria-label="7, Flyjin">
+          <circle class="halo" cx="492" cy="418" r="24"/>
+          <circle class="body" cx="492" cy="418" r="15"/>
+          <text x="492" y="418">7</text>
+          <text class="name" x="452" y="404" text-anchor="end">Flyjin</text>
+        </g>
+        <g class="pin" data-stop="barroco" tabindex="0" role="button" aria-label="8, Barroco">
+          <circle class="halo" cx="575" cy="458" r="24"/>
+          <circle class="body" cx="575" cy="458" r="15"/>
+          <text x="575" y="458">8</text>
+          <text class="name" x="597" y="463">Barroco</text>
+        </g>
+      </g>
+    </svg>
+    <div class="map-note">
+      <div class="legend" aria-label="Pins">
+        <a href="#s-jatoba"><span class="dot">1</span>Jatoba</a>
+        <a href="#s-stillife"><span class="dot">2</span>Stillife</a>
+        <a href="#s-auberge"><span class="dot">3</span>Auberge</a>
+        <a href="#s-velvet"><span class="dot">4</span>Velvet</a>
+        <a href="#s-voute"><span class="dot">5</span>La Voûte</a>
+        <a href="#s-palma"><span class="dot">6</span>Palma</a>
+        <a href="#s-flyjin"><span class="dot">7</span>Flyjin</a>
+        <a href="#s-barroco"><span class="dot">8</span>Barroco</a>
+        <a href="#s-marcus"><span class="dot">9</span>Marcus</a>
+        <a href="#s-hotel"><span class="dot hotel">H</span>Hotel</a>
+      </div>
+      <span>Sketch map, not to scale. Tap a pin to jump to its slot.</span>
+    </div>
+  </div>
+</section>
+
+<section class="schedule wrap" id="schedule">
+  <div class="schedule-head">
+    <h2>The weekend</h2>
+    <p>Tap <b>Details</b> on any stop for the address, Google Maps and Instagram.</p>
+  </div>
+  <nav class="mobile-nav" aria-label="Jump to day">
+    <a class="chip" href="#thu">Thu 1</a>
+    <a class="chip" href="#fri">Fri 2</a>
+    <a class="chip" href="#sat">Sat 3</a>
+    <a class="chip" href="#sun">Sun 4</a>
+    <a class="chip" href="#mon">Mon 5</a>
+  </nav>
+
+  <div class="days">
+    <!-- THURSDAY -->
+    <div class="day" id="thu">
+      <header><h3>Thursday</h3><span>Oct 1</span><span class="tag">Arrival</span></header>
+      <article class="stop" id="s-hotel" data-stop="hotel">
+        <p class="time">Whenever you land</p>
+        <h4 class="name"><span class="dot hotel">H</span>Maison Place Jacques-Cartier</h4>
+        <p class="what">Check in, drop bags · home base all weekend</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">440 Place Jacques-Cartier, Old Montréal</span>
+            <span>Right on the main square. The Auberge and Le Velvet are a two-minute walk. First round is on whoever lands last.</span>
+            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Maison+Place+Jacques-Cartier+440+Place+Jacques-Cartier+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.luxuryintransit.ca" target="_blank" rel="noopener">Luxury In Transit ↗</a></div>
+          </div>
+        </details>
+      </article>
+      <article class="stop" id="s-jatoba" data-stop="jatoba">
+        <p class="time">8:00 PM</p>
+        <h4 class="name"><span class="dot">1</span>Jatoba</h4>
+        <p class="what">Dinner · Japanese, downtown</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">1184 Place Phillips, Montréal</span>
+            <span>Japanese kitchen in a century-old building off Square Phillips. Sit down hungry.</span>
+            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Jatoba+1184+Place+Phillips+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.instagram.com/jatobamontreal/" target="_blank" rel="noopener">Instagram @jatobamontreal ↗</a></div>
+          </div>
+        </details>
+      </article>
+      <div class="flow" aria-hidden="true">↓</div>
+      <article class="stop" id="s-stillife" data-stop="stillife">
+        <p class="time">After dinner</p>
+        <h4 class="name"><span class="dot">2</span>Stillife</h4>
+        <p class="what">Party · underground speakeasy</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">640 Rue Saint-Paul Ouest, Old Montréal</span>
+            <span>Down an alley, behind a locked door, under the street. Stick together on the way in.</span>
+            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Stillife+640+Rue+Saint-Paul+Ouest+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.instagram.com/stillifemtl/" target="_blank" rel="noopener">Instagram @stillifemtl ↗</a></div>
+          </div>
+        </details>
+      </article>
+    </div>
+
+    <!-- FRIDAY -->
+    <div class="day" id="fri">
+      <header><h3>Friday</h3><span>Oct 2</span><span class="tag">The big one</span></header>
+      <div class="open-slot">
+        <p class="time">Morning to 2:30 PM</p>
+        <p class="name">Recover, brunch, wander</p>
+        <p class="what">Old Port walk, bagels, or sleep. Nothing scheduled.</p>
+      </div>
+      <article class="stop" id="s-pickleball" data-stop="pickleball">
+        <p class="time">3:00 PM</p>
+        <h4 class="name"><span class="dot" aria-hidden="true">🏓</span>Pickleball</h4>
+        <p class="what">Sweat it out before the long night · court TBD</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">Location to be confirmed</span>
+            <span>Bring sneakers. Losers buy the pre-drinks.</span>
+          </div>
+        </details>
+      </article>
+      <div class="flow" aria-hidden="true">↓</div>
+      <article class="stop" id="s-auberge" data-stop="auberge">
+        <p class="time">8:30 PM</p>
+        <h4 class="name"><span class="dot">3</span>Auberge Saint-Gabriel</h4>
+        <p class="what">Dinner · the 1754 inn in Old Montréal</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">426 Rue Saint-Gabriel, Old Montréal</span>
+            <span>Stone walls, big fireplace, the oldest inn in town. Le Velvet is in the same building, so no cab needed after.</span>
+            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Auberge+Saint-Gabriel+426+Rue+Saint-Gabriel+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.instagram.com/aubergesaintgab/" target="_blank" rel="noopener">Instagram @aubergesaintgab ↗</a></div>
+          </div>
+        </details>
+      </article>
+      <div class="flow" aria-hidden="true">↓</div>
+      <article class="stop" id="s-velvet" data-stop="velvet">
+        <p class="time">After dinner</p>
+        <h4 class="name"><span class="dot">4</span>Le Velvet</h4>
+        <p class="what">Pre-drinks · speakeasy downstairs</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">426 Rue Saint-Gabriel, under the Auberge</span>
+            <span>Reached through the old catacombs beneath the restaurant. Reservation required, so we go in as a group.</span>
+            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Velvet+Speakeasy+426+Rue+Saint-Gabriel+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.instagram.com/velvet_speakeasy/" target="_blank" rel="noopener">Instagram @velvet_speakeasy ↗</a></div>
+          </div>
+        </details>
+      </article>
+      <div class="flow" aria-hidden="true">↓</div>
+      <article class="stop" id="s-voute" data-stop="voute">
+        <p class="time">Late</p>
+        <h4 class="name"><span class="dot">5</span>La Voûte</h4>
+        <p class="what">Club · inside an old bank vault</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">360 Rue Saint-Jacques, Old Montréal</span>
+            <span>The former Royal Bank vault, now a supper club and nightclub. Eight-minute walk west from the Auberge.</span>
+            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=La+Voute+360+Rue+Saint-Jacques+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.instagram.com/lavoutemontreal/" target="_blank" rel="noopener">Instagram @lavoutemontreal ↗</a></div>
+          </div>
+        </details>
+      </article>
+    </div>
+
+    <!-- SATURDAY -->
+    <div class="day" id="sat">
+      <header><h3>Saturday</h3><span>Oct 3</span><span class="tag">Round two</span></header>
+      <article class="stop" id="s-marcus" data-stop="marcus">
+        <p class="time">12:30 PM · TBD</p>
+        <h4 class="name"><span class="dot">9</span>Marcus</h4>
+        <p class="what">Brunch · Four Seasons rooftop, Golden Square Mile</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">1440 Rue de la Montagne, 3rd floor of the Four Seasons</span>
+            <span>Seafood-forward brunch with a terrace. Not booked yet; consider it pencilled in.</span>
+            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Marcus+Restaurant+1440+Rue+de+la+Montagne+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.instagram.com/marcus_montreal/" target="_blank" rel="noopener">Instagram @marcus_montreal ↗</a></div>
+          </div>
+        </details>
+      </article>
+      <div class="flow" aria-hidden="true">↓</div>
+      <article class="stop" id="s-spa" data-stop="spa">
+        <p class="time">3:00 PM · TBD</p>
+        <h4 class="name"><span class="dot" aria-hidden="true">♨</span>Spa</h4>
+        <p class="what">Thermal circuit and a nap in a robe · venue TBD</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">Location to be confirmed</span>
+            <span>Reset before round two. Bring a swimsuit.</span>
+          </div>
+        </details>
+      </article>
+      <div class="flow" aria-hidden="true">↓</div>
+      <article class="stop" id="s-palma" data-stop="palma">
+        <p class="time">8:30 PM</p>
+        <h4 class="name"><span class="dot">6</span>Palma</h4>
+        <p class="what">Dinner · seafood in Griffintown</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">100 Rue Peel, Griffintown</span>
+            <span>Seafood-leaning spot by the Lachine Canal. Short ride back into Old Montréal after.</span>
+            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Palma+100+Rue+Peel+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.instagram.com/palmamtl/" target="_blank" rel="noopener">Instagram @palmamtl ↗</a></div>
+          </div>
+        </details>
+      </article>
+      <div class="flow" aria-hidden="true">↓</div>
+      <article class="stop" id="s-flyjin" data-stop="flyjin">
+        <p class="time">After dinner</p>
+        <h4 class="name"><span class="dot">7</span>Flyjin</h4>
+        <p class="what">Cocktails and dancing · basement lounge</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">417 Rue Saint-Pierre, Old Montréal</span>
+            <span>Easy-to-miss door at street level, staircase down to the lounge. Bar side gets going after 11.</span>
+            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Flyjin+417+Rue+Saint-Pierre+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.instagram.com/flyjinmtl/" target="_blank" rel="noopener">Instagram @flyjinmtl ↗</a></div>
+          </div>
+        </details>
+      </article>
+    </div>
+
+    <!-- SUNDAY -->
+    <div class="day" id="sun">
+      <header><h3>Sunday</h3><span>Oct 4</span><span class="tag">Victory lap</span></header>
+      <div class="open-slot">
+        <p class="time">Daytime</p>
+        <p class="name">Slow morning</p>
+        <p class="what">Hangover poutine, a nap, and a walk up the mountain for anyone still standing.</p>
+      </div>
+      <article class="stop" id="s-barroco" data-stop="barroco">
+        <p class="time">Evening · time TBD</p>
+        <h4 class="name"><span class="dot">8</span>Barroco</h4>
+        <p class="what">Dinner · Spanish and Mediterranean, Old Montréal</p>
+        <details>
+          <summary>Details</summary>
+          <div class="detail">
+            <span class="addr">312 Rue Saint-Paul Ouest, Old Montréal</span>
+            <span>Candlelit stone room on the prettiest street in the old city. Paella-sized appetites welcome.</span>
+            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Barroco+312+Rue+Saint-Paul+Ouest+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.instagram.com/barrocomontreal/" target="_blank" rel="noopener">Instagram @barrocomontreal ↗</a></div>
+          </div>
+        </details>
+      </article>
+      <div class="flow" aria-hidden="true">↓</div>
+      <div class="open-slot">
+        <p class="time">After dinner</p>
+        <p class="name">Chill bars, or La Voûte again</p>
+        <p class="what">Group vote at the table. Low-key cocktail crawl through Old Montréal, or one more run at the vault (pin 5).</p>
+      </div>
+      <div class="open-slot" id="mon" style="scroll-margin-top:80px">
+        <p class="time">Monday, Oct 5</p>
+        <p class="name">Departure</p>
+        <p class="what">Flights home. Nobody talks about Friday.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rules wrap">
+  <div class="box">
+    <h2>House rules</h2>
+    <ul>
+      <li><b>Dinner reservations are firm.</b> Be at the table by the time on the card.</li>
+      <li><b>Tables are booked at every bar and club.</b> No line, no cover. Arrive together for Stillife, Le Velvet, La Voûte and Flyjin so the whole group gets seated at once.</li>
+      <li><b>Bring an ID.</b> Passports work, and you will be asked.</li>
+    </ul>
+    <ul>
+      <li><b>Card works everywhere.</b> Canadian dollars; a little cash for tips is plenty.</li>
+      <li><b>Pickleball counts.</b> Losing team buys Friday pre-drinks.</li>
+      <li><b>Group chat is the source of truth.</b> Times shift, the chat wins.</li>
+    </ul>
+  </div>
+</section>
+
+<footer class="wrap">
+  <p>Dinner times are booked; “after dinner” stops follow whenever the table clears. Still to be confirmed: the pickleball court, Saturday brunch at Marcus, the Saturday spa, and Sunday dinner time. Map is a sketch, not to scale.</p>
+</footer>
+
+<script>
+  (function () {
+    var pins = document.querySelectorAll('.pin');
+    var stops = document.querySelectorAll('.stop[data-stop]');
+    var current = null;
+
+    function setActive(key) {
+      current = key;
+      pins.forEach(function (p) { p.classList.toggle('active', p.dataset.stop === key); });
+      stops.forEach(function (s) { s.classList.toggle('active', s.dataset.stop === key); });
+    }
+
+    pins.forEach(function (p) {
+      function go() {
+        var key = p.dataset.stop;
+        setActive(key);
+        var target = document.getElementById('s-' + key);
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+      p.addEventListener('click', go);
+      p.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); }
+      });
+    });
+
+    stops.forEach(function (s) {
+      s.addEventListener('mouseenter', function () { setActive(s.dataset.stop); });
+      s.addEventListener('focusin', function () { setActive(s.dataset.stop); });
+    });
+
+    document.querySelectorAll('.legend a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        setActive(a.getAttribute('href').replace('#s-', ''));
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
