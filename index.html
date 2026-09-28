@@ -418,12 +418,6 @@
           <text x="871" y="375">H</text>
           <text class="name" x="893" y="372">Hotel · Place Jacques-Cartier</text>
         </g>
-        <g class="pin" data-stop="marcus" tabindex="0" role="button" aria-label="9, Marcus">
-          <circle class="halo" cx="428" cy="168" r="24"/>
-          <circle class="body" cx="428" cy="168" r="15"/>
-          <text x="428" y="168">9</text>
-          <text class="name" x="450" y="173">Marcus</text>
-        </g>
         <g class="pin" data-stop="jatoba" tabindex="0" role="button" aria-label="1, Jatoba">
           <circle class="halo" cx="600" cy="225" r="24"/>
           <circle class="body" cx="600" cy="225" r="15"/>
@@ -472,6 +466,12 @@
           <text x="575" y="458">8</text>
           <text class="name" x="597" y="463">Barroco</text>
         </g>
+        <g class="pin" data-stop="spa" tabindex="0" role="button" aria-label="Spa, Bota Bota">
+          <circle class="halo" cx="470" cy="520" r="24"/>
+          <circle class="body" cx="470" cy="520" r="15"/>
+          <text x="470" y="520">♨</text>
+          <text class="name" x="492" y="525">Bota Bota</text>
+        </g>
       </g>
     </svg>
     <div class="map-note">
@@ -484,7 +484,7 @@
         <a href="#s-palma"><span class="dot">6</span>Palma</a>
         <a href="#s-flyjin"><span class="dot">7</span>Flyjin</a>
         <a href="#s-barroco"><span class="dot">8</span>Barroco</a>
-        <a href="#s-marcus"><span class="dot">9</span>Marcus</a>
+        <a href="#s-spa"><span class="dot">♨</span>Bota Bota</a>
         <a href="#s-hotel"><span class="dot hotel">H</span>Hotel</a>
       </div>
       <span>Sketch map, not to scale. Tap a pin to jump to its slot.</span>
@@ -662,29 +662,21 @@
     <!-- SATURDAY -->
     <div class="day" id="sat">
       <header><h3>Saturday</h3><span>Oct 3</span><span class="tag">Round two</span></header>
-      <article class="stop" id="s-marcus" data-stop="marcus">
-        <p class="time">12:30 PM · TBD</p>
-        <h4 class="name"><span class="dot">9</span>Marcus</h4>
-        <p class="what">Brunch · Four Seasons rooftop, Golden Square Mile</p>
-        <details>
-          <summary>Details</summary>
-          <div class="detail">
-            <span class="addr">1440 Rue de la Montagne, 3rd floor of the Four Seasons</span>
-            <span>Seafood-forward brunch with a terrace. Not booked yet; consider it pencilled in.</span>
-            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Marcus+Restaurant+1440+Rue+de+la+Montagne+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.instagram.com/marcus_montreal/" target="_blank" rel="noopener">Instagram @marcus_montreal ↗</a></div>
-          </div>
-        </details>
-      </article>
-      <div class="flow" aria-hidden="true">↓</div>
+      <div class="open-slot">
+        <p class="time">Morning to 2:30 PM</p>
+        <p class="name">Sleep in</p>
+        <p class="what">Nothing scheduled. Coffee, bagels, or don't leave the room.</p>
+      </div>
       <article class="stop" id="s-spa" data-stop="spa">
-        <p class="time">3:00 PM · TBD</p>
-        <h4 class="name"><span class="dot" aria-hidden="true">♨</span>Spa</h4>
-        <p class="what">Thermal circuit and a nap in a robe · venue TBD</p>
+        <p class="time">3:00 PM</p>
+        <h4 class="name"><span class="dot" aria-hidden="true">♨</span>Bota Bota</h4>
+        <p class="what">Spa · a converted ferry moored in the Old Port</p>
         <details>
           <summary>Details</summary>
           <div class="detail">
-            <span class="addr">Location to be confirmed</span>
-            <span>Reset before round two. Bring a swimsuit.</span>
+            <span class="addr">358 Rue de la Commune Ouest, McGill entrance, Old Port</span>
+            <span>Water circuit, saunas and a deck on the river, ten minutes on foot from the hotel. Bring a swimsuit. It's a silent zone, so save the stories for dinner.</span>
+            <div class="links"><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Bota+Bota+spa-sur-l'eau+358+Rue+de+la+Commune+Ouest+Montreal" target="_blank" rel="noopener">Google Maps ↗</a><a class="ig" href="https://www.instagram.com/botabotamtl/" target="_blank" rel="noopener">Instagram @botabotamtl ↗</a></div>
           </div>
         </details>
       </article>
@@ -779,7 +771,7 @@
 </section>
 
 <footer class="wrap">
-  <p>Dinner times are booked; “after dinner” stops follow whenever the table clears. Still to be confirmed: the pickleball court, Saturday brunch at Marcus, the Saturday spa, Sunday dinner time and Chris’s return flight. Map is a sketch, not to scale.</p>
+  <p>Dinner times are booked; “after dinner” stops follow whenever the table clears. Still to be confirmed: the pickleball court, Sunday dinner time and Chris’s return flight. Map is a sketch, not to scale.</p>
 </footer>
 
 <script>
